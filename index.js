@@ -1,0 +1,42 @@
+const express = require('express')
+var cors = require('cors')
+app = express()
+app.listen(process.env.PORT||3001);
+app.use(express.static('static'))
+app.use(require('express-fileupload')());
+app.use(cors())
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
+const fetchPaginatedData = require('./routes/fetch-paginated-data')
+const getData = require("./routes/getData")
+const deleteAll = require("./routes/deleteAll")
+const showAll = require("./routes/showAll")
+const validatePrivate = require("./routes/api/validate-private")
+const private = require("./routes/api/private")
+const getUserDetails = require("./routes/api/getUserDetails")
+const privateUpdate = require("./routes/api/privateUpdate")
+const newDownloads = require("./routes/api/newDownloads")
+const search = require("./routes/api/search")
+const register = require("./routes/api/register")
+const details = require("./routes/api/details")
+const logIn = require("./routes/api/logIn")
+const saveToDataBase = require("./routes/api/saveToDataBase")
+const saveToS3 = require("./routes/api/saveToS3")
+const home = require("./routes/home")
+app.use('/', home)
+app.use('/fetch-paginated-data', fetchPaginatedData) /* Query String - pageNo and pageSize  */
+app.use('/data', getData)                            /*  */
+app.use('/delete-all', deleteAll)
+app.use('/show-all', showAll)
+app.use('/api/validate-private', validatePrivate)
+app.use('/api/private', private)
+app.use('/api/getUserDetails', getUserDetails)
+app.use('/api/private-update', privateUpdate)
+app.use('/api/new', newDownloads)
+app.use('/api/search', search)
+app.use('/api/register', register)
+app.use('/api/details', details)
+app.use('/api/log-in', logIn)
+app.use('/api/saveToDataBase', saveToDataBase)
+app.use('/api/save', saveToS3)

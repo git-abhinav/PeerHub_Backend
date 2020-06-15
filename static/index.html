@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>
+            PeerHub
+        </title>
+    </head>
+    <body>
+        <h1>
+            PeerHub
+        </h1>
+        <!-- <label for="name"> Name : </label>
+        <input type="text" id="name"> </input> 
+        <button id="send" > Say Hi </button>
+        <ul id="list"></ul> -->
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <!-- <script>
+            var socket = io({transport: ['websocket'], upgrade: false})
+            var addLi = (message) => {
+                var li = document.createElement('li')
+                li.appendChild(document.createTextNode(message))
+                document.getElementById('list').appendChild(li)
+            }
+            document.getElementById('send').addEventListener('click', (e) => {
+                socket.emit('name', document.getElementById('name').value)
+            })
+            socket.on('name', (name)=>{
+                addLi(name+" says Hi!")
+                // var li = document.createElement('li')
+                // li.appendChild(document.createTextNode(name+' is online'))
+                // document.getElementById('list').appendChild(li)
+            })
+            io.on('connection', function(socket){
+                socket.join('some room');
+            });
+            function sendToRoom(){
+                console.log("In send room")
+                console.log(document.getElementById("roomid").value)
+                var socket = io({transport: ['websocket'], upgrade: false})
+                socket.broadcast.to(id).emit('file', "From abhinav");
+            } -->
+        <!-- </script> -->
+        <!-- <form ref='uploadForm' 
+            id='uploadForm' 
+            action='./api/save' 
+            method='post' 
+            encType="multipart/form-data"
+        >
+          <input type="file" name="file" />
+          <input type='submit' value='Upload!' />
+        </form>
+
+        
+        My Room <input type="text" id="myRoom">
+        <br>
+        Send Room <input type="text" id="roomid">
+        <button onclick="sendToRoom()">
+            Send to Room
+        </button> -->
+    </body>
+</html>
